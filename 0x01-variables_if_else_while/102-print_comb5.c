@@ -27,7 +27,7 @@ int main(void)
 			putchar(firstDigit2 + '0');
 			putchar(secondDigit2 + '0');
 
-			if (i != 98 || j != 99)
+			if (i != 99 || j != 99)
 			{
 				putchar(',');
 				putchar(' ');
