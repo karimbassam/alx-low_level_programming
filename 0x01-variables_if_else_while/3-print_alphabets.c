@@ -2,26 +2,24 @@
 /**
  * main - start of the program
  *
- * Description: This prgram print the alphabets in bith lower & upper cases using putchar();
+ * Description: Prints alphabets in both lower&upper cases using putchar();
  *
  * Return: 0 means successful termination
  */
 
 int main(void)
 {
-        char ch;
+	char ch;
 
-        for (ch = 'a'; ch <= 'z'; ch++)
-        {
-                putchar(ch);
-        }
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		putchar(ch);
+	}
+	for (ch = 'A'; ch = 'Z'; ch++)
+	{
+		putchar(ch);
+	}
+	putchar('\n');
 
-        for (ch = 'A'; ch <= 'Z'; ch++)
-        {
-                putchar(ch);
-        }
-
-        putchar('\n');
-
-        return (0);
+	return (0);
 }
