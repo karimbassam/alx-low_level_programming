@@ -8,7 +8,7 @@
  * Return: string encoded
  */
 
-char *leet(cahr *c)
+char *leet(char *c)
 {
 	char *cp = c;
 	char key[] = {'A', 'E', 'O', 'T', 'L'};
@@ -17,9 +17,9 @@ char *leet(cahr *c)
 
 	while (*c)
 	{
-		for (i = 0; i < sizeof(key) / sizeof(cahr); i++)
+		for (i = 0; i < sizeof(key) / sizeof(char); i++)
 		{
-			if (*c == key[i] || *c == kay[i] + 32)
+			if (*c == key[i] || *c == key[i] + 32)
 			{
 				*c = 48 + value[i];
 			}
