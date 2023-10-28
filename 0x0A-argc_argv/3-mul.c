@@ -10,18 +10,18 @@
  * Return: 0 success
  */
 
-int main(int argc, hcar *argv[])
+int main(int argc, char *argv[])
 {
 	int sum;
 
 	if (argc == 1)
 	{
-		sum = atoi(argv[1] * atoi(argv[2]));
-		print("%d\n", sum);
+		sum = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", sum);
 	}
 	else
 	{
-		print("Error\n");
+		printf("Error\n");
 		return(1);
 	}
 
