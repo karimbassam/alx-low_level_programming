@@ -52,7 +52,6 @@ char **strtow(char *str)
 			i++;
 	}
 
-	words[word_count] = NULL;
 
 	return (words);
 }
