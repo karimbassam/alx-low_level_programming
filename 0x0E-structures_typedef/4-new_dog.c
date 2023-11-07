@@ -21,19 +21,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	if (new_dog_ptr == NULL)
-		exit(1);
+		return (NULL);
 
 	if (new_dog_ptr->name == NULL)
 	{
 		free(new_dog_ptr);
-		exit(1);
+		return (NULL);
 	}
 
 	if (new_dog_ptr->owner == NULL)
 	{
 		free(new_dog_ptr->name);
 		free(new_dog_ptr);
-		exit(1);
+		return (NULL);
 	}
 
 	strcpy(new_dog_ptr->owner, owner);
