@@ -7,7 +7,7 @@
  * @...: The variable number of strings to be printed
  *
  * Description: This function prints the strings separated by the given
- * separator. If a string is NULL, it prints (nil) instead. It ends with a new line.
+ * separator If a string is NULL it prints nil) instead It ends with a new line
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
