@@ -16,6 +16,6 @@ size_t list_len(const list_t *h)
 		node_count++;
 	}
 
-	return node_count;
+	return (node_count);
 }
 
