@@ -24,22 +24,20 @@ int main(int ac, char **av)
 	from_fd = open(av[1], O_RDONLY);
 	if (from_fd == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
-       to_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
-       if (to_fd == -1)
-	       dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
+	to_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
+	if (to_fd == -1)
+		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
+	while ((bytes = read(from_fd, buf, READ_BUF_SIZE)) > 0)
+		if (write(to_fd, buf, bytes) != bytes)
+			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
+	if (bytes == -1)
+		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
+	from_fd = close(from_fd);
+	to_fd = close(to_fd);
+	if (from_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
+	if (to_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
 
-       while((bytes = read(from_fd, buf, READ_BUF_SIZE)) > 0)
-	       if (write(to_fd, buf, bytes) != bytes)
-		       dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
-       if (bytes == -1)
-	       dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
-
-       from_fd = close(from_fd);
-       to_fd = close(to_fd);
-       if (from_fd)
-	       dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
-       if (to_fd)
-	       dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
-
-       return (EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
