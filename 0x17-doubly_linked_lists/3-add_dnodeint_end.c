@@ -17,7 +17,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	/* Check if memory allocation was successful */
 	if (new_node == NULL)
 	{
-		return NULL; /* Return NULL if memory allocation failed */
+		return (NULL); /* Return NULL if memory allocation failed */
 	}
 
 	/* Set the data for the new node */
@@ -29,7 +29,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	{
 		new_node->prev = NULL;
 		*head = new_node;
-		return new_node;
+		return (new_node);
 	}
 
 	/* Find the last node in the list */
@@ -44,6 +44,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new_node->prev = temp;
 
 	/* Return the address of the new element */
-	return new_node;
+	return (new_node);
 }
 
