@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
 *main - main entry of the program
-*Return: it always returns 0 which means successful progrma termination
+*Return: it always returns 0 which means successful program termination
 */
 int main(void)
 {
