@@ -36,7 +36,7 @@ void insert_sorted_node(shash_table_t *ht, shash_node_t *new_node)
 		ht->stail->snext = new_node;
 		ht->stail = new_node;
 	}
-	else /* Insert in the middle */
+	else /* Insert inside the middle */
 	{
 		new_node->sprev = current->sprev;
 		new_node->snext = current;
